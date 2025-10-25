@@ -5,7 +5,7 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 
 import userRoutes from "./routes/userRoutes.js";
-// import plotRoutes from "./routes/plotRoutes.js";
+import plotRoutes from "./routes/plotRoutes.js";
 // import ledgerRoutes from "./routes/ledgerRoutes.js";
 
 dotenv.config();
@@ -18,7 +18,7 @@ app.use(cors());
 app.use(morgan("dev"));
 
 app.use("/api/users", userRoutes);
-// app.use("/api/plots", plotRoutes);
+app.use("/api/plots", plotRoutes);
 // app.use("/api/ledger", ledgerRoutes);
 
 // ✅ Health check route (for Vercel ping)
