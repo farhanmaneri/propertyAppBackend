@@ -14,9 +14,13 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
-app.use(morgan("dev"));
-
+app.use(
+  cors({
+    origin: ["http://localhost:5173",
+  "https://property-app-dusky.vercel.app"],
+    credentials: true,
+  })
+);app.use(morgan("dev"));
 app.use("/api/users", userRoutes);
 app.use("/api/plots", plotRoutes);
 // app.use("/api/ledger", ledgerRoutes);
