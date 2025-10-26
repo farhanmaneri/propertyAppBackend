@@ -16,8 +16,11 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173",
-  "https://property-app-dusky.vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https: //property-backend-black.vercel.app/api/plots",
+      "https://property-app-dusky.vercel.app",
+    ],
     credentials: true,
   })
 );app.use(morgan("dev"));
